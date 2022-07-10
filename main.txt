@@ -1,2 +1,4 @@
 add aaa by tempBranch
 test firt modify and commit
+amend add a line
+amend a line again and try to merg two commit as one
