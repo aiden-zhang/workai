@@ -75,7 +75,8 @@ int main(int argc, char *argv[]) {
         clusterFpsList.emplace_back(0);
     }
 
-    std::string serialize_file_name = "./slz.bin";    
+    std::string serialize_file_name = "./slz.bin"; 
+    // serialize_file_name = modelPath;   
     dl::nne::Engine *engine = nullptr;
     dl::nne::Parser *parser = nullptr;
     dl::nne::Builder *builder =nullptr;
@@ -191,12 +192,12 @@ int main(int argc, char *argv[]) {
     int allClusterFps = 0;
     for (int i = 0; i < threadNum; ++i) {
         clusterFpsList[i] = 1000.0f * maxBatchSize *executionTimes/totalMillisecondsList[i];
-        std::cout << "thread " << i << "; costs: " << totalMillisecondsList[i] << " ms; fps: "<< clusterFpsList[i] << std::endl;
+        std::cout << "thread " << i << "; costs: " << totalMillisecondsList[i] / executionTimes << " ms; fps: "<< clusterFpsList[i] << std::endl;
         SumMilliseconds+=totalMillisecondsList[i];
         allClusterFps += clusterFpsList[i];
     }
     
-    std::cout << "avg cost: " << SumMilliseconds/threadNum << " ms, all fps: " << allClusterFps << std::endl;
+    std::cout << "avg cost: " << SumMilliseconds/ threadNum/executionTimes<< " ms, all fps: " << allClusterFps << std::endl;
     
     engine->Destroy();
     if (is_deserialize != 1) {
