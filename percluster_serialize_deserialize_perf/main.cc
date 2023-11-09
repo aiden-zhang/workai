@@ -1,3 +1,4 @@
+// #include <cuda.h>
 #include <dlnne.h>
 #include <cuda_runtime_api.h>
 #include <cu_ext.h>
@@ -10,6 +11,7 @@
 #include <numeric>
 #include "utils.h"
 
+using namespace dl::nne;
 #define CUDA_CHECK(call) \
     do {\
         cudaError_t _e = call;\
@@ -18,6 +20,28 @@
             assert(0);\
         }\
     } while (0)
+
+
+class Bindings
+{
+public:
+    Bindings(Dims shape, int dataTypeSize, int batch_size, std::string name, bool is_input, int node_size)
+    : shape(shape), dataTypeSize(dataTypeSize), batch_size(batch_size), node_name(name), is_input(is_input), node_size(node_size){};
+
+    ~Bindings() = default;
+
+public:
+    bool  is_input;
+    int   node_size;
+    int   dataTypeSize;
+    void* host_buffer;
+    void* device_buffer;
+    std::string node_name;
+private: 
+    Dims shape;
+
+    int batch_size;
+};
 
 
 size_t getElementSize(dl::nne::DataType dataType) {
@@ -42,7 +66,11 @@ size_t getElementSize(dl::nne::DataType dataType) {
     }
 }
 
+
+
 int main(int argc, char *argv[]) {
+
+    #if 1
     int deviceId = 0;
     int maxBatchSize = 32;
     int warmupTimes = 1;
@@ -97,7 +125,6 @@ int main(int argc, char *argv[]) {
         auto end=std::chrono::system_clock::now();
         std::chrono::duration<double> diff=end-start;
         std::cout<<"deserialize engine cost:"<<diff.count()*1000<<"(ms)"<<std::endl;
-
         delete[] slz_data;
     } else {
         builder = dl::nne::CreateInferBuilder();
@@ -112,9 +139,22 @@ int main(int argc, char *argv[]) {
         std::cout << "----SetBuilderConfig----\n";        
         builder->SetBuilderConfig(builderCfg);
         parser = dl::nne::CreateParser();
+
+        // if(custom_pulgin_so_path!="" && custom_pulgin_front_path!=""){
+        //     parser->RegisterUserOp(custom_pulgin_so_path.c_str(),custom_pulgin_front_path.c_str(),"custom_op");
+        // }
+        // for (const auto &input : inputs_dict_) {
+        //     parser->RegisterInput(input.first.c_str(), input.second);
+        // }
+        // std::string output_nodes;
+        // for (auto node : output_nodes_) {
+        //     TEST_RETURN_FALSE_EXPR(parser->RegisterOutput(node.c_str()));
+        // }
+
         for(auto iter : output_nodes) {
             parser->RegisterOutput(iter.c_str());
         }
+
         std::cout << "----Parse----\n";
         parser->Parse(modelPath.c_str(), *network);
 
@@ -133,20 +173,54 @@ int main(int argc, char *argv[]) {
         slz.close();
     }
 
-    auto clusterEnqueueFunc = [&](int clusterIdx, int thread_idx) {
+    auto clusterEnqueueFunc = [&](int batch_size, int clusterIdx, int thread_idx) {
         std::cout << "clusterIdx: " << clusterIdx << " --> threadIdx: "<< thread_idx << std::endl;
         auto nbBindings = engine->GetNbBindings();
-        void *deviceBuffers[nbBindings];
+        void **binding_device_array = (void**)malloc(nbBindings * sizeof(void*));
+        // void *deviceBuffers[nbBindings];
+        std::vector<Bindings*> binding_list;
+
         for (int i = 0; i < nbBindings; ++i) {
-            auto dims         = engine->GetBindingDimensions(i);
             auto dataType     = engine->GetBindingDataType(i);
+            auto name = engine->GetBindingName(i);
+            auto dims = engine->GetBindingDimensions(i);
+            auto data_type = engine->GetBindingDataType(i);
+            bool is_input = engine->BindingIsInput(i);
+
             auto elementCount = std::accumulate(dims.d, dims.d + dims.nbDims, 1, std::multiplies<size_t>());
             auto dataTypeSize = getElementSize(dataType);
-            auto bindingSize  = elementCount * dataTypeSize;
+            auto bindingSize  = batch_size*elementCount*dataTypeSize;
+            auto binding = new Bindings(dims, dataTypeSize, batch_size, name, is_input, bindingSize);
 
-            void *deviceBuffer;
-            CUDA_CHECK( cudaMalloc(&deviceBuffer, bindingSize * maxBatchSize) );
-            deviceBuffers[i] = deviceBuffer;
+            void* pdev = nullptr;
+            void* phost = nullptr;
+            CUDA_CHECK( cudaMalloc(&pdev, bindingSize));
+            phost = malloc(bindingSize);
+
+            binding->device_buffer = pdev;
+            binding->host_buffer = phost;
+            
+            printf("dataTypeSize: %zu\n", dataTypeSize);
+            if (is_input) {
+                for(int i = 0; i < bindingSize/dataTypeSize ; i++)
+                {
+                    if(dataTypeSize == 1) {
+                        ((char*)phost)[i] = 1;
+                    } else if (dataTypeSize == 4) 
+                    {
+                        ((float*)phost)[i] = 1.0f;
+                    } else {
+                        printf("err! dataTypeSize: %zu\n", dataTypeSize);
+                        return;
+                    }
+                }
+                cudaMemcpy(pdev, phost, bindingSize, cudaMemcpyHostToDevice);
+            }       
+
+            binding_list.push_back(binding); 
+            /* copy input */
+
+            binding_device_array[i] = pdev;
         }
 
         auto clusterConfig = static_cast<dl::nne::ClusterConfig>(clusterIdx);
@@ -156,21 +230,43 @@ int main(int argc, char *argv[]) {
         CUDA_CHECK( cudaStreamCreateWithFlags(&cudaStream, cudaStreamNonBlocking) );
         float &totalMilliseconds = totalMillisecondsList[thread_idx];    
         for (int i = 0; i < warmupTimes; ++i) {
-            executionContext->Enqueue(maxBatchSize, deviceBuffers, cudaStream, nullptr);
+            executionContext->Enqueue(maxBatchSize, binding_device_array, cudaStream, nullptr);
             CUDA_CHECK( cudaStreamSynchronize(cudaStream) );
         }
 
         auto start = std::chrono::high_resolution_clock::now();
         for (int i = 0; i < executionTimes; ++i) {
-            executionContext->Enqueue(maxBatchSize, deviceBuffers, cudaStream, nullptr);
+            executionContext->Enqueue(maxBatchSize, binding_device_array, cudaStream, nullptr);
             CUDA_CHECK( cudaStreamSynchronize(cudaStream) );
         }
         auto end = std::chrono::high_resolution_clock::now();        
         auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
         totalMilliseconds = duration;
 
+        /* copy output */
+        for(auto i = 0; i < nbBindings; i++) {
+            if( !binding_list[i]->is_input ) { //only test one output node
+                std::cout << "output_len:"<< binding_list[i]->node_size << " node_name" << binding_list[i]->node_name <<std::endl;
+                cudaMemcpy(binding_list[i]->host_buffer, binding_list[i]->device_buffer, binding_list[i]->node_size, cudaMemcpyDeviceToHost);
+                for (int kk = 0; kk < batch_size; kk++) {
+                    for( int j = 0; j < 3; j++)
+                    {
+                        if(binding_list[i]->dataTypeSize == 1) {
+                            printf("%d  ", ((char*)binding_list[i]->host_buffer)[kk*10+j]);
+                        } else if (binding_list[i]->dataTypeSize == 4) {
+                            printf("%f  ", ((float*)binding_list[i]->host_buffer)[kk*10+j]);
+                        } else {
+                            printf("err! dataTypeSize: %d\n", binding_list[i]->dataTypeSize);
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+
+        /* release resource */
         for (int i = 0; i < nbBindings; ++i) {
-            CUDA_CHECK( cudaFree(deviceBuffers[i]) );
+            CUDA_CHECK( cudaFree(binding_device_array[i]) );
         }
 
         CUDA_CHECK( cudaStreamDestroy(cudaStream) );
@@ -180,7 +276,7 @@ int main(int argc, char *argv[]) {
     std::vector<std::thread> threads;
     for (int i = 0; i < threadNum; ++i) {
         std::cout<< "theead: " << i <<" @ tu: " << i % tuCount << std::endl;
-        auto thread = std::thread(clusterEnqueueFunc, i % tuCount, i);
+        auto thread = std::thread(clusterEnqueueFunc, maxBatchSize, i % tuCount, i);
         threads.emplace_back(std::move(thread));
     }
 
@@ -205,6 +301,6 @@ int main(int argc, char *argv[]) {
         network->Destroy();
         builder->Destroy();
     }
-
+    #endif
     return 0;
 }

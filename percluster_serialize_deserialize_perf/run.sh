@@ -15,7 +15,7 @@ echo "<customer_bugs_test_case::${case_name} RUN>"
 # make
 make -j
 # ./main -m /work/for_release/pb_model/resnet_v1_50_quant_tu_nchw.pb -b 32 -e 1 -s 1 -d 0 -t 6 -o resnet_v1_50/SpatialSqueeze
-./a.out -m ./humdet.rlym -b8 -s 1 -d 0  #saved to ./slz.bin
+./a.out -m ./justadduint8.rlym -b8 -s 1 -d 0  #saved to ./slz.bin
 echo -e  "--------------------------------------------------------------------\n\n"
 ./a.out -b8 -e 1000 -s 0 -d 1 -t 1  #load from ./slz.bin
 if [[ $? -eq 0 ]];then
