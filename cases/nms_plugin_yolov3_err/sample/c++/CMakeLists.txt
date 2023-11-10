@@ -1,0 +1,16 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.1)
+set(SDK_DIR $ENV{DLICC_PATH}/../)
+
+PROJECT(yolov5)
+INCLUDE_DIRECTORIES(${SDK_DIR}/include)
+INCLUDE_DIRECTORIES(${SDK_DIR}/include/dlnne)
+INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/dljpu)
+INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/imageProcess/include)
+link_directories(${SDK_DIR}/lib)
+link_directories(${PROJECT_SOURCE_DIR}/../../pluginzoo/lib)
+
+# SET(CMAKE_C_COMPILER "${SDK_DIR}/bin/dlcc")
+# SET(CMAKE_CXX_COMPILER "${SDK_DIR}/bin/dlcc")
+ADD_SUBDIRECTORY(./dljpu)
+ADD_SUBDIRECTORY(./imageProcess)
+ADD_SUBDIRECTORY(./app_yolov3-nms)

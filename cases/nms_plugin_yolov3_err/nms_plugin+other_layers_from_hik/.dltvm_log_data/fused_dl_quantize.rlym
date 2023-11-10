@@ -1,0 +1,206 @@
+{
+  "root": 1, 
+  "nodes": [
+    {
+      "type_key": ""
+    }, 
+    {
+      "type_key": "relay.Function", 
+      "attrs": {
+        "_checked_type_": "27", 
+        "attrs": "23", 
+        "body": "12", 
+        "params": "2", 
+        "ret_type": "21", 
+        "span": "0", 
+        "type_params": "22"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [3]
+    }, 
+    {
+      "type_key": "relay.Var", 
+      "attrs": {
+        "_checked_type_": "6", 
+        "span": "0", 
+        "type_annotation": "6", 
+        "vid": "4"
+      }
+    }, 
+    {
+      "type_key": "relay.Id", 
+      "attrs": {"name_hint": "5"}
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "p0"
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "float16", 
+        "shape": "7", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [8, 9, 10, 11]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "64"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "20"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "32"
+      }
+    }, 
+    {
+      "type_key": "relay.Call", 
+      "attrs": {
+        "_checked_type_": "21", 
+        "args": "14", 
+        "attrs": "15", 
+        "op": "13", 
+        "span": "0", 
+        "type_args": "20"
+      }
+    }, 
+    {
+      "type_key": "Op", 
+      "repr_str": "dl.quantize"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [3]
+    }, 
+    {
+      "type_key": "relay.attrs.DLQuantizeAttrs", 
+      "attrs": {
+        "mode": "MIN_FIRST", 
+        "out_dtype": "int8", 
+        "output_scales": "16", 
+        "output_zero_points": "18"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [17]
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0625"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [19]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [6]
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "int8", 
+        "shape": "7", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array"
+    }, 
+    {
+      "type_key": "DictAttrs", 
+      "attrs": {"__dict__": "24"}
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "Primitive", 
+        "hash"
+      ], 
+      "data": [25, 26]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "15c2515ff80c53fd"
+    }, 
+    {
+      "type_key": "FuncType", 
+      "attrs": {
+        "arg_types": "28", 
+        "ret_type": "29", 
+        "span": "0", 
+        "type_constraints": "31", 
+        "type_params": "30"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [6]
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "int8", 
+        "shape": "7", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array"
+    }, 
+    {
+      "type_key": "Array"
+    }
+  ], 
+  "b64ndarrays": [], 
+  "attrs": {"tvm_version": "0.8.dev0"}
+}

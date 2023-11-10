@@ -1,0 +1,9 @@
+To excute AETestCase, you can do as follows
+cd AETestCase
+make
+
+For function test
+./AETest --gtest_filter=TopkSelectTest.Performance
+
+For performance test
+./AETest --gtest_filter=TopkSelectTest.Function

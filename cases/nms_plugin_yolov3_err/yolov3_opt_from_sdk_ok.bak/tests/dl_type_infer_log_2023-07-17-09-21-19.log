@@ -1,0 +1,126 @@
+Type inference fail @ call 6 (divide)
+================================================================================
+Infer call 0
+
+
+def @main() {
+  ones(shape=[1, 65, 20, 32], dtype="float32")
+}
+
+Infer call 0 ok, result is
+
+
+def @main() -> Tensor[(1, 65, 20, 32), float32] {
+  ones(shape=[1, 65, 20, 32], dtype="float32") /* ty=Tensor[(1, 65, 20, 32), float32] */
+}
+
+================================================================================
+Infer call 1
+
+
+def @main() {
+  %0 = ones(shape=[1, 65, 20, 32], dtype="float32");
+  take(%0, meta[relay.Constant][0], axis=1)
+}
+
+
+Infer call 1 ok, result is
+
+
+def @main() -> Tensor[(1, 19, 20, 32), float32] {
+  %0 = ones(shape=[1, 65, 20, 32], dtype="float32") /* ty=Tensor[(1, 65, 20, 32), float32] */;
+  take(%0, meta[relay.Constant][0] /* ty=Tensor[(19), int32] */, axis=1) /* ty=Tensor[(1, 19, 20, 32), float32] */
+}
+
+
+================================================================================
+Infer call 2
+
+
+def @main() {
+  %0 = ones(shape=[1, 65, 20, 32], dtype="float32");
+  %1 = take(%0, meta[relay.Constant][0], axis=1);
+  transpose(%1, axes=[0, 2, 3, 1])
+}
+
+
+Infer call 2 ok, result is
+
+
+def @main() -> Tensor[(1, 20, 32, 19), float32] {
+  %0 = ones(shape=[1, 65, 20, 32], dtype="float32") /* ty=Tensor[(1, 65, 20, 32), float32] */;
+  %1 = take(%0, meta[relay.Constant][0] /* ty=Tensor[(19), int32] */, axis=1) /* ty=Tensor[(1, 19, 20, 32), float32] */;
+  transpose(%1, axes=[0, 2, 3, 1]) /* ty=Tensor[(1, 20, 32, 19), float32] */
+}
+
+
+================================================================================
+Infer call 3
+
+
+def @main() {
+  %0 = ones(shape=[1, 65, 20, 32], dtype="float32");
+  %1 = take(%0, meta[relay.Constant][0], axis=1);
+  %2 = transpose(%1, axes=[0, 2, 3, 1]);
+  cast(%2, dtype="float32")
+}
+
+
+Infer call 3 ok, result is
+
+
+def @main() -> Tensor[(1, 20, 32, 19), float32] {
+  %0 = ones(shape=[1, 65, 20, 32], dtype="float32") /* ty=Tensor[(1, 65, 20, 32), float32] */;
+  %1 = take(%0, meta[relay.Constant][0] /* ty=Tensor[(19), int32] */, axis=1) /* ty=Tensor[(1, 19, 20, 32), float32] */;
+  %2 = transpose(%1, axes=[0, 2, 3, 1]) /* ty=Tensor[(1, 20, 32, 19), float32] */;
+  cast(%2, dtype="float32") /* ty=Tensor[(1, 20, 32, 19), float32] */
+}
+
+
+================================================================================
+Infer call 4
+
+
+def @main() {
+  ones(shape=[5, 2], dtype="float32")
+}
+
+Infer call 4 ok, result is
+
+
+def @main() -> Tensor[(5, 2), float32] {
+  ones(shape=[5, 2], dtype="float32") /* ty=Tensor[(5, 2), float32] */
+}
+
+================================================================================
+Infer call 5
+
+
+def @main() {
+  ones(shape=[1, 3], dtype="int32")
+}
+
+Infer call 5 ok, result is
+
+
+def @main() -> Tensor[(1, 3), int32] {
+  ones(shape=[1, 3], dtype="int32") /* ty=Tensor[(1, 3), int32] */
+}
+
+================================================================================
+Infer call 6
+
+
+def @main() {
+  %0 = ones(shape=[1, 3], dtype="int32");
+  divide(%0, 16f)
+}
+
+Infer call 6 fail, result is
+
+
+def @main() {
+  %0 = ones(shape=[1, 3], dtype="int32");
+  divide(%0, 16f)
+}
+

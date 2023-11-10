@@ -1,0 +1,16 @@
+Type inference fail @ call 0 (dl.quantize)
+================================================================================
+Infer call 0
+
+
+def @main(%input) {
+  dl.quantize(%input, out_dtype="int8", output_scales=[0.125f], output_zero_points=[0])
+}
+
+Infer call 0 fail, result is
+
+
+def @main(%input) {
+  dl.quantize(%input, out_dtype="int8", output_scales=[0.125f], output_zero_points=[0])
+}
+

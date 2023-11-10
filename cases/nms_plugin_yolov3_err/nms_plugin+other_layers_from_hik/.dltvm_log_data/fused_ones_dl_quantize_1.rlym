@@ -1,0 +1,223 @@
+{
+  "root": 1, 
+  "nodes": [
+    {
+      "type_key": ""
+    }, 
+    {
+      "type_key": "relay.Function", 
+      "attrs": {
+        "_checked_type_": "30", 
+        "attrs": "26", 
+        "body": "3", 
+        "params": "2", 
+        "ret_type": "24", 
+        "span": "0", 
+        "type_params": "25"
+      }
+    }, 
+    {
+      "type_key": "Array"
+    }, 
+    {
+      "type_key": "relay.Call", 
+      "attrs": {
+        "_checked_type_": "24", 
+        "args": "5", 
+        "attrs": "18", 
+        "op": "4", 
+        "span": "0", 
+        "type_args": "23"
+      }
+    }, 
+    {
+      "type_key": "Op", 
+      "repr_str": "dl.quantize"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [6]
+    }, 
+    {
+      "type_key": "relay.Call", 
+      "attrs": {
+        "_checked_type_": "16", 
+        "args": "8", 
+        "attrs": "9", 
+        "op": "7", 
+        "span": "0", 
+        "type_args": "15"
+      }
+    }, 
+    {
+      "type_key": "Op", 
+      "repr_str": "ones"
+    }, 
+    {
+      "type_key": "Array"
+    }, 
+    {
+      "type_key": "relay.attrs.InitOpAttrs", 
+      "attrs": {
+        "dtype": "float32", 
+        "shape": "10"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [11, 12, 13, 14]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "64"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "20"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "32"
+      }
+    }, 
+    {
+      "type_key": "Array"
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "float32", 
+        "shape": "17", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [11, 12, 13, 14]
+    }, 
+    {
+      "type_key": "relay.attrs.DLQuantizeAttrs", 
+      "attrs": {
+        "mode": "MIN_FIRST", 
+        "out_dtype": "int8", 
+        "output_scales": "19", 
+        "output_zero_points": "21"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [20]
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.125"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [22]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [16]
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "int8", 
+        "shape": "17", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array"
+    }, 
+    {
+      "type_key": "DictAttrs", 
+      "attrs": {"__dict__": "27"}
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "Primitive", 
+        "hash"
+      ], 
+      "data": [28, 29]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "05fe62b13de0d1ce"
+    }, 
+    {
+      "type_key": "FuncType", 
+      "attrs": {
+        "arg_types": "31", 
+        "ret_type": "32", 
+        "span": "0", 
+        "type_constraints": "35", 
+        "type_params": "34"
+      }
+    }, 
+    {
+      "type_key": "Array"
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "int8", 
+        "shape": "33", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [11, 12, 13, 14]
+    }, 
+    {
+      "type_key": "Array"
+    }, 
+    {
+      "type_key": "Array"
+    }
+  ], 
+  "b64ndarrays": [], 
+  "attrs": {"tvm_version": "0.8.dev0"}
+}

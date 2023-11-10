@@ -1,0 +1,7 @@
+digraph G {
+labelloc="t";
+label=<<b>DAG Graph: after_live_intervals</b><br/><br/>>;
+node_0x31dcfb0 [label="{main_sub_0_with_const_load|{custom_non_max_suppression_2_store = (1,8,3200,)}|{LR = [12B,12r)}}", style="solid,filled", fontcolor="#000000", color="#000000", shape="record", fillcolor="#bddbdb" ];
+node_output [label="output", shape="Msquare" ];
+node_0x31dcfb0 -> node_output [label="BOOL", color="#000000"]
+}

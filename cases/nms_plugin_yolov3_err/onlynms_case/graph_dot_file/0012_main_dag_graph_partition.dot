@@ -1,0 +1,38 @@
+digraph G {
+labelloc="t";
+label=<<b>DAG Graph: after_partition</b><br/><br/>>;
+tensor_0x31e0c70 [label="{c0|{c0 = (1,)}}", style="solid,filled", fontcolor="#000000", color="#000000", shape="record", fillcolor="#bddbdb" ];
+tensor_0x21b0eb0 [label="{c1|{c1 = (1,)}}", style="solid,filled", fontcolor="#000000", color="#000000", shape="record", fillcolor="#bddbdb" ];
+tensor_0x31d5660 [label="{c2|{c2 = (1,)}}", style="solid,filled", fontcolor="#000000", color="#000000", shape="record", fillcolor="#bddbdb" ];
+tensor_0x31d8240 [label="input tensor (sorted_idx)", shape="box", fillcolor="#ffffff" ];
+tensor_0x31d8ba0 [label="input tensor (sorted_scores)", shape="box", fillcolor="#ffffff" ];
+tensor_0x31d9f90 [label="input tensor (origin_boxes)", shape="box", fillcolor="#ffffff" ];
+tensor_0x30db5c0 [label="input tensor (sort_size)", shape="box", fillcolor="#ffffff" ];
+node_0x31d9b30 [label="{custome_non_max_suppression_gather_boxes|{custome_non_max_suppression_gather_boxes = (1,8,3200,4,)}|{unit = 0}}", style="solid,filled", fontcolor="#000000", color="#000000", shape="record", fillcolor="#efd8a9" ];
+node_0x21e7dc0 [label="{custom_non_max_suppression|{custom_non_max_suppression_0 = (1,8,3200,)custom_non_max_suppression_1 = (1,8,)custom_non_max_suppression_2 = (1,8,3200,)}|{unit = 1}}", style="solid,filled", fontcolor="#000000", color="#000000", shape="record", fillcolor="#efd8a9" ];
+node_0x31de260 [label="{custom_csum|{custom_csum = (8,)}|{unit = 1}}", style="solid,filled", fontcolor="#000000", color="#000000", shape="record", fillcolor="#efd8a9" ];
+node_0x2eeadf0 [label="{custom_combine_non_max_suppression_post|{custom_combine_non_max_suppression_post_0 = (9999,2,)custom_combine_non_max_suppression_post_1 = (9999,4,)custom_combine_non_max_suppression_post_2 = (9999,)custom_combine_non_max_suppression_post_3 = (1,)}|{unit = 1}}", style="solid,filled", fontcolor="#000000", color="#000000", shape="record", fillcolor="#efd8a9" ];
+node_output [label="output", shape="Msquare" ];
+tensor_0x31d9f90 -> node_0x31d9b30 [label="FP32", color="#000000"]
+tensor_0x31d8240 -> node_0x31d9b30 [label="INT32", color="#000000"]
+tensor_0x30db5c0 -> node_0x31d9b30 [label="INT32", color="#000000"]
+node_0x31d9b30 -> node_0x21e7dc0 [label="FP32", color="#000000"]
+tensor_0x31d8ba0 -> node_0x21e7dc0 [label="FP32", color="#000000"]
+tensor_0x31e0c70 -> node_0x21e7dc0 [label="INT32", color="#000000"]
+tensor_0x21b0eb0 -> node_0x21e7dc0 [label="FP32", color="#000000"]
+tensor_0x31d5660 -> node_0x21e7dc0 [label="FP32", color="#000000"]
+tensor_0x30db5c0 -> node_0x21e7dc0 [label="INT32", color="#000000"]
+node_0x21e7dc0 -> node_output [label="INT32", color="#000000"]
+node_0x21e7dc0 -> node_output [label="INT32", color="#000000"]
+node_0x21e7dc0 -> node_output [label="BOOL", color="#000000"]
+node_0x21e7dc0 -> node_0x31de260 [label="INT32", color="#000000"]
+node_0x31d9b30 -> node_0x2eeadf0 [label="FP32", color="#000000"]
+tensor_0x31d8ba0 -> node_0x2eeadf0 [label="FP32", color="#000000"]
+node_0x21e7dc0 -> node_0x2eeadf0 [label="INT32", color="#000000"]
+node_0x21e7dc0 -> node_0x2eeadf0 [label="INT32", color="#000000"]
+node_0x31de260 -> node_0x2eeadf0 [label="INT32", color="#000000"]
+node_0x2eeadf0 -> node_output [label="INT32", color="#000000"]
+node_0x2eeadf0 -> node_output [label="FP32", color="#000000"]
+node_0x2eeadf0 -> node_output [label="FP32", color="#000000"]
+node_0x2eeadf0 -> node_output [label="INT32", color="#000000"]
+}

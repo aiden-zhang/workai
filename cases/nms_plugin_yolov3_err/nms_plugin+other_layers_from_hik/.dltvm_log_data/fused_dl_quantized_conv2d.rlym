@@ -1,0 +1,1809 @@
+{
+  "root": 1, 
+  "nodes": [
+    {
+      "type_key": ""
+    }, 
+    {
+      "type_key": "relay.Function", 
+      "attrs": {
+        "_checked_type_": "216", 
+        "attrs": "212", 
+        "body": "38", 
+        "params": "2", 
+        "ret_type": "206", 
+        "span": "0", 
+        "type_params": "211"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [3]
+    }, 
+    {
+      "type_key": "relay.Var", 
+      "attrs": {
+        "_checked_type_": "6", 
+        "span": "0", 
+        "type_annotation": "6", 
+        "vid": "4"
+      }
+    }, 
+    {
+      "type_key": "relay.Id", 
+      "attrs": {"name_hint": "5"}
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "p0"
+    }, 
+    {
+      "type_key": "TupleType", 
+      "attrs": {
+        "fields": "7", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [8, 14, 20, 23, 26, 29, 32, 35]
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "int8", 
+        "shape": "9", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [10, 11, 12, 13]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "64"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "20"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "32"
+      }
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "int8", 
+        "shape": "15", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [16, 17, 18, 19]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "65"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "64"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "int32", 
+        "shape": "21", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [22]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "65"
+      }
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "float64", 
+        "shape": "24", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [25]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "65"
+      }
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "int32", 
+        "shape": "27", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [28]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "65"
+      }
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "int32", 
+        "shape": "30", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [31]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "65"
+      }
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "int32", 
+        "shape": "33", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [34]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "65"
+      }
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "int32", 
+        "shape": "36", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [37]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "65"
+      }
+    }, 
+    {
+      "type_key": "relay.Call", 
+      "attrs": {
+        "_checked_type_": "206", 
+        "args": "40", 
+        "attrs": "41", 
+        "op": "39", 
+        "span": "0", 
+        "type_args": "205"
+      }
+    }, 
+    {
+      "type_key": "Op", 
+      "repr_str": "dl.quantized_conv2d"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [3]
+    }, 
+    {
+      "type_key": "relay.attrs.QuantizedConv2DAttrs", 
+      "attrs": {
+        "bias_layout": "51", 
+        "channels": "16", 
+        "data_layout": "49", 
+        "dilation": "45", 
+        "groups": "1", 
+        "kernel_layout": "50", 
+        "kernel_size": "48", 
+        "lhs_scales": "65", 
+        "lhs_zero_points": "67", 
+        "out_dtype": "float16", 
+        "out_layout": "49", 
+        "pad_value": "0", 
+        "pad_width": "52", 
+        "rhs_scales": "69", 
+        "rhs_zero_points": "135", 
+        "scales": "201", 
+        "strides": "42", 
+        "zero_points": "203"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [43, 44]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [46, 47]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [18, 19]
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "NCHW"
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "OIHW"
+    }, 
+    {
+      "type_key": "runtime.String"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [53, 56, 59, 62]
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [54, 55]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [57, 58]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [60, 61]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [63, 64]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [66]
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0625"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [68]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [
+        70, 
+        71, 
+        72, 
+        73, 
+        74, 
+        75, 
+        76, 
+        77, 
+        78, 
+        79, 
+        80, 
+        81, 
+        82, 
+        83, 
+        84, 
+        85, 
+        86, 
+        87, 
+        88, 
+        89, 
+        90, 
+        91, 
+        92, 
+        93, 
+        94, 
+        95, 
+        96, 
+        97, 
+        98, 
+        99, 
+        100, 
+        101, 
+        102, 
+        103, 
+        104, 
+        105, 
+        106, 
+        107, 
+        108, 
+        109, 
+        110, 
+        111, 
+        112, 
+        113, 
+        114, 
+        115, 
+        116, 
+        117, 
+        118, 
+        119, 
+        120, 
+        121, 
+        122, 
+        123, 
+        124, 
+        125, 
+        126, 
+        127, 
+        128, 
+        129, 
+        130, 
+        131, 
+        132, 
+        133, 
+        134
+      ]
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.00724363"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0050377800000000004"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.00103235"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0015306499999999999"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0078744899999999996"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0031147000000000002"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.013937"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0041351299999999999"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0029478099999999999"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0096349699999999996"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0021080999999999999"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0021038099999999998"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0033011400000000002"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0065970400000000002"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.00509071"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0011172300000000001"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.001194"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0087547300000000005"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0109134"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0100994"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0098748199999999994"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.00547409"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0135169"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0054941199999999999"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0058274299999999998"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0088448499999999996"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0063738800000000002"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0053329500000000004"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.00056219099999999997"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.00082540499999999998"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0080718999999999999"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.012602800000000001"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.010258700000000001"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.014693299999999999"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0077443099999999999"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.015107600000000001"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0084419300000000003"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0080470999999999997"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0149021"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0074644100000000003"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0058007199999999997"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.00137138"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.00178576"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0093560199999999996"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.011558499999999999"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.010564799999999999"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.016931100000000001"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0107989"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0140147"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0102644"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0098876999999999993"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.015476699999999999"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0050234800000000003"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0072512599999999998"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.00125837"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.00180101"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0097832700000000002"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0067958799999999998"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0075764700000000001"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0104213"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0109987"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0082554800000000008"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0071764000000000003"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0062074699999999997"
+      }
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.0092873599999999997"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [
+        136, 
+        137, 
+        138, 
+        139, 
+        140, 
+        141, 
+        142, 
+        143, 
+        144, 
+        145, 
+        146, 
+        147, 
+        148, 
+        149, 
+        150, 
+        151, 
+        152, 
+        153, 
+        154, 
+        155, 
+        156, 
+        157, 
+        158, 
+        159, 
+        160, 
+        161, 
+        162, 
+        163, 
+        164, 
+        165, 
+        166, 
+        167, 
+        168, 
+        169, 
+        170, 
+        171, 
+        172, 
+        173, 
+        174, 
+        175, 
+        176, 
+        177, 
+        178, 
+        179, 
+        180, 
+        181, 
+        182, 
+        183, 
+        184, 
+        185, 
+        186, 
+        187, 
+        188, 
+        189, 
+        190, 
+        191, 
+        192, 
+        193, 
+        194, 
+        195, 
+        196, 
+        197, 
+        198, 
+        199, 
+        200
+      ]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [202]
+    }, 
+    {
+      "type_key": "FloatImm", 
+      "attrs": {
+        "dtype": "float32", 
+        "span": "0", 
+        "value": "0.25"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [204]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [6]
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "float16", 
+        "shape": "207", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [208, 16, 209, 210]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "20"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "32"
+      }
+    }, 
+    {
+      "type_key": "Array"
+    }, 
+    {
+      "type_key": "DictAttrs", 
+      "attrs": {"__dict__": "213"}
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "hash", 
+        "data_layout", 
+        "kernel_layout", 
+        "Primitive", 
+        "out_layout", 
+        "bias_layout"
+      ], 
+      "data": [214, 49, 50, 215, 49, 51]
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "afcba33e7643f029"
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "FuncType", 
+      "attrs": {
+        "arg_types": "217", 
+        "ret_type": "220", 
+        "span": "0", 
+        "type_constraints": "226", 
+        "type_params": "225"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [218]
+    }, 
+    {
+      "type_key": "TupleType", 
+      "attrs": {
+        "fields": "219", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [8, 14, 20, 23, 26, 29, 32, 35]
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "float16", 
+        "shape": "221", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [222, 16, 223, 224]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "20"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "32"
+      }
+    }, 
+    {
+      "type_key": "Array"
+    }, 
+    {
+      "type_key": "Array"
+    }
+  ], 
+  "b64ndarrays": [], 
+  "attrs": {"tvm_version": "0.8.dev0"}
+}

@@ -1,0 +1,327 @@
+{
+  "root": 1, 
+  "nodes": [
+    {
+      "type_key": ""
+    }, 
+    {
+      "type_key": "relay.Function", 
+      "attrs": {
+        "_checked_type_": "49", 
+        "attrs": "30", 
+        "body": "10", 
+        "params": "2", 
+        "ret_type": "28", 
+        "span": "0", 
+        "type_params": "29"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [3]
+    }, 
+    {
+      "type_key": "relay.Var", 
+      "attrs": {
+        "_checked_type_": "6", 
+        "span": "0", 
+        "type_annotation": "6", 
+        "vid": "4"
+      }
+    }, 
+    {
+      "type_key": "relay.Id", 
+      "attrs": {"name_hint": "5"}
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "p0"
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "float32", 
+        "shape": "7", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [8, 9]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "4"
+      }
+    }, 
+    {
+      "type_key": "relay.Call", 
+      "attrs": {
+        "_checked_type_": "28", 
+        "args": "12", 
+        "attrs": "26", 
+        "op": "11", 
+        "span": "0", 
+        "type_args": "27"
+      }
+    }, 
+    {
+      "type_key": "Op", 
+      "repr_str": "cast"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [13]
+    }, 
+    {
+      "type_key": "relay.Call", 
+      "attrs": {
+        "_checked_type_": "23", 
+        "args": "15", 
+        "attrs": "0", 
+        "op": "14", 
+        "span": "0", 
+        "type_args": "25"
+      }
+    }, 
+    {
+      "type_key": "Op", 
+      "repr_str": "round"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [16]
+    }, 
+    {
+      "type_key": "relay.Call", 
+      "attrs": {
+        "_checked_type_": "23", 
+        "args": "18", 
+        "attrs": "0", 
+        "op": "17", 
+        "span": "0", 
+        "type_args": "22"
+      }
+    }, 
+    {
+      "type_key": "Op", 
+      "repr_str": "divide"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [3, 19]
+    }, 
+    {
+      "type_key": "relay.Constant", 
+      "attrs": {
+        "_checked_type_": "20", 
+        "data": "0", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "float32", 
+        "shape": "21", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [6, 20]
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "float32", 
+        "shape": "24", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [8, 9]
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [23]
+    }, 
+    {
+      "type_key": "relay.attrs.CastAttrs", 
+      "attrs": {"dtype": "int32"}
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [23]
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "int32", 
+        "shape": "24", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array"
+    }, 
+    {
+      "type_key": "DictAttrs", 
+      "attrs": {"__dict__": "31"}
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "DLExtRetAlignments", 
+        "DLExtParamsAlignments", 
+        "DLExtRetStrides", 
+        "Primitive", 
+        "DLExtParamsStrides"
+      ], 
+      "data": [32, 36, 40, 44, 45]
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [33]
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [34, 35]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "4"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [37]
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [38, 39]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "4"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [41]
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [42, 43]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "4"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [46]
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [47, 48]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "4"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "FuncType", 
+      "attrs": {
+        "arg_types": "50", 
+        "ret_type": "28", 
+        "span": "0", 
+        "type_constraints": "52", 
+        "type_params": "51"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [6]
+    }, 
+    {
+      "type_key": "Array"
+    }, 
+    {
+      "type_key": "Array"
+    }
+  ], 
+  "b64ndarrays": [
+    "P6G0lvBAXt0AAAAAAAAAAAEAAAAAAAAAAAAAAAIgAQAEAAAAAAAAAAAAgEE="
+  ], 
+  "attrs": {"tvm_version": "0.8.dev0"}
+}
