@@ -13,7 +13,7 @@ model_lists=['swin_tiny_patch4_window7_224','swin_small_patch4_window7_224','swi
 if __name__ == '__main__':
     print('hello world')
     with open('v2_hk_swint_fp32_batch_1.json', 'r+') as fcc_file:  #v2_hk_swint_fp32_batch_1.json
-        fcc_data = json.load(fcc_file, object_hook=OrderedDict)
+        fcc_data = json.load(fcc_file, object_pairs_hook=OrderedDict)
         # print(fcc_data)
         print(json.dumps(fcc_data, indent=4))
         fcc_data['caseOwner'] = 'ning.zhang'
@@ -49,7 +49,7 @@ if __name__ == '__main__':
                 jsonFile = open(case_dir+'/'+case_json, "w")
                 jsonFile.write(json.dumps(fcc_data, indent=4))
                 shellcmd = "cd ${cur_dir} && ../run_case.sh c++/hk/"+case_dir+'/'+case_json + '\n'
-                with open('test.txt', mode = 'a', encoding='utf-8') as f:
+                with open('test.txt', mode = 'a') as f:
                     f.write(shellcmd)
                 # print(f'shell cmd: {shellcmd}')
 
