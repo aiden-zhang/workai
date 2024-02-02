@@ -1,0 +1,311 @@
+{
+  "root": 1, 
+  "nodes": [
+    {
+      "type_key": ""
+    }, 
+    {
+      "type_key": "IRModule", 
+      "attrs": {
+        "attrs": "0", 
+        "functions": "2", 
+        "global_type_var_map_": "47", 
+        "global_var_map_": "46", 
+        "source_map": "48", 
+        "type_definitions": "45"
+      }
+    }, 
+    {
+      "type_key": "Map", 
+      "data": [3, 17]
+    }, 
+    {
+      "type_key": "GlobalVar", 
+      "attrs": {
+        "_checked_type_": "5", 
+        "name_hint": "4", 
+        "span": "0", 
+        "virtual_device_": "0"
+      }
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "main"
+    }, 
+    {
+      "type_key": "FuncType", 
+      "attrs": {
+        "arg_types": "6", 
+        "ret_type": "13", 
+        "span": "0", 
+        "type_constraints": "16", 
+        "type_params": "15"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [7]
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "uint8", 
+        "shape": "8", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [9, 10, 11, 12]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "3"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1000"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1000"
+      }
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "uint8", 
+        "shape": "14", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [9, 10, 11, 12]
+    }, 
+    {
+      "type_key": "Array"
+    }, 
+    {
+      "type_key": "Array"
+    }, 
+    {
+      "type_key": "relay.Function", 
+      "attrs": {
+        "_checked_type_": "5", 
+        "attrs": "0", 
+        "body": "24", 
+        "params": "18", 
+        "ret_type": "13", 
+        "span": "0", 
+        "type_params": "44", 
+        "virtual_device_": "22"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [19]
+    }, 
+    {
+      "type_key": "relay.Var", 
+      "attrs": {
+        "_checked_type_": "7", 
+        "span": "0", 
+        "type_annotation": "7", 
+        "vid": "20", 
+        "virtual_device_": "22"
+      }
+    }, 
+    {
+      "type_key": "relay.Id", 
+      "attrs": {"name_hint": "21"}
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "data"
+    }, 
+    {
+      "type_key": "VirtualDevice", 
+      "attrs": {
+        "device_type_int": "-1", 
+        "memory_scope": "23", 
+        "target": "0", 
+        "virtual_device_id": "-1"
+      }
+    }, 
+    {
+      "type_key": "runtime.String"
+    }, 
+    {
+      "type_key": "relay.Call", 
+      "attrs": {
+        "_checked_type_": "13", 
+        "args": "26", 
+        "attrs": "0", 
+        "op": "25", 
+        "span": "0", 
+        "type_args": "43", 
+        "virtual_device_": "22"
+      }
+    }, 
+    {
+      "type_key": "Op", 
+      "repr_str": "add"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [27, 40]
+    }, 
+    {
+      "type_key": "relay.Call", 
+      "attrs": {
+        "_checked_type_": "38", 
+        "args": "29", 
+        "attrs": "0", 
+        "op": "28", 
+        "span": "0", 
+        "type_args": "37", 
+        "virtual_device_": "22"
+      }
+    }, 
+    {
+      "type_key": "Op", 
+      "repr_str": "multiply"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [30, 34]
+    }, 
+    {
+      "type_key": "relay.Call", 
+      "attrs": {
+        "_checked_type_": "7", 
+        "args": "32", 
+        "attrs": "0", 
+        "op": "31", 
+        "span": "0", 
+        "type_args": "33", 
+        "virtual_device_": "22"
+      }
+    }, 
+    {
+      "type_key": "Op", 
+      "repr_str": "nn.relu"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [19]
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [7]
+    }, 
+    {
+      "type_key": "relay.Constant", 
+      "attrs": {
+        "_checked_type_": "35", 
+        "data": "0", 
+        "span": "0", 
+        "virtual_device_": "22"
+      }
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "uint8", 
+        "shape": "36", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [7, 35]
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "uint8", 
+        "shape": "39", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [9, 10, 11, 12]
+    }, 
+    {
+      "type_key": "relay.Constant", 
+      "attrs": {
+        "_checked_type_": "41", 
+        "data": "1", 
+        "span": "0", 
+        "virtual_device_": "22"
+      }
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "uint8", 
+        "shape": "42", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [38, 41]
+    }, 
+    {
+      "type_key": "Array"
+    }, 
+    {
+      "type_key": "Map"
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "main"
+      ], 
+      "data": [3]
+    }, 
+    {
+      "type_key": "Map"
+    }, 
+    {
+      "type_key": "SourceMap", 
+      "attrs": {"source_map": "49"}
+    }, 
+    {
+      "type_key": "Map"
+    }
+  ], 
+  "b64ndarrays": [
+    "P6G0lvBAXt0AAAAAAAAAAAEAAAAAAAAAAAAAAAEIAQABAAAAAAAAAAQ=", 
+    "P6G0lvBAXt0AAAAAAAAAAAEAAAAAAAAAAAAAAAEIAQABAAAAAAAAAAI="
+  ], 
+  "attrs": {"tvm_version": "0.9.dev0"}
+}
