@@ -82,19 +82,19 @@ int main(int argc, char *argv[]) {
     std::vector<std::string> output_nodes;
     getCustomOpt(argc, argv, modelPath, maxBatchSize, executionTimes, threadNum, is_serialize, is_deserialize, output_nodes);
 
-    std::cout << "modelPath: "<< modelPath << ", maxBatchSize: "<< maxBatchSize << ", executionTimes: " << executionTimes <<", threadNum: "<< threadNum 
+    std::cout << "maxBatchSize: "<< maxBatchSize << ", executionTimes: " << executionTimes <<", threadNum: "<< threadNum 
     << ", is_serialize: "<< is_serialize << ", is_deserialize: "<< is_deserialize << std::endl;
 
-    // cudaSetDevice(deviceId);
-    // cudaDeviceProp deviceProp{};
-    // CUDA_CHECK(cudaGetDeviceProperties(&deviceProp, deviceId));
+    cudaSetDevice(deviceId);
+    cudaDeviceProp deviceProp{};
+    CUDA_CHECK(cudaGetDeviceProperties(&deviceProp, deviceId));
 
-    // int clusterCount = deviceProp.clusterCount;
-    int tuCount = 3;
-    // for(int i = 0; i < clusterCount; i++)
-    // {
-    //     tuCount += deviceProp.tuNum[i];
-    // }
+    int clusterCount = deviceProp.clusterCount;
+    int tuCount = 0;
+    for(int i = 0; i < clusterCount; i++)
+    {
+        tuCount += deviceProp.tuNum[i];
+    }
     std::cout << "tuCount: "<<tuCount<<std::endl;
     std::vector<float> totalMillisecondsList;
     std::vector<int> clusterFpsList;
@@ -104,14 +104,13 @@ int main(int argc, char *argv[]) {
     }
 
     std::string serialize_file_name = "./slz.bin"; 
-    // serialize_file_name = modelPath;   
     dl::nne::Engine *engine = nullptr;
     dl::nne::Parser *parser = nullptr;
     dl::nne::Builder *builder =nullptr;
     dl::nne::Network *network = nullptr;
 
     if (is_deserialize == 1) {
-        std::cout << "----now deserialize---- the serialized engine is: " << serialize_file_name << std::endl;
+        std::cout << "----now will deserialize---- the serialized engine is: " << serialize_file_name << std::endl;
         std::ifstream slz(serialize_file_name);
         TEST_RETURN_FALSE_EXPR(slz.is_open());
 
@@ -127,6 +126,7 @@ int main(int argc, char *argv[]) {
         std::cout<<"deserialize engine cost:"<<diff.count()*1000<<"(ms)"<<std::endl;
         delete[] slz_data;
     } else {
+
         builder = dl::nne::CreateInferBuilder();
         network = builder->CreateNetwork();
         std::cout << "----SetConfig----\n";
@@ -146,16 +146,12 @@ int main(int argc, char *argv[]) {
         // for (const auto &input : inputs_dict_) {
         //     parser->RegisterInput(input.first.c_str(), input.second);
         // }
-        // std::string output_nodes;
-        // for (auto node : output_nodes_) {
-        //     TEST_RETURN_FALSE_EXPR(parser->RegisterOutput(node.c_str()));
-        // }
 
         for(auto iter : output_nodes) {
             parser->RegisterOutput(iter.c_str());
         }
 
-        std::cout << "----Parse----\n";
+        std::cout << "----Parse model: " << modelPath << "----\n";
         auto parse_ret = parser->Parse(modelPath.c_str(), *network);
         if( parse_ret != 1 ) {
             std::cout << "----parse fail!! ret: "<<parse_ret<<std::endl;
@@ -165,12 +161,11 @@ int main(int argc, char *argv[]) {
         std::cout << "----BuildEngine----\n";        
         if( (engine = builder->BuildEngine(*network)) == nullptr ) {
             std::cout << "----build engine fail!!\n";
-            return 0;  
+            return -1;  
         }
     }
 
-
-    if (is_serialize == 1 && is_deserialize !=1) {
+    if (is_serialize == 1) {
         std::cout<<"----Serialized---- file saved to "<< serialize_file_name << std::endl;
         auto ser_res = engine->Serialize();
         std::ofstream slz(serialize_file_name);
