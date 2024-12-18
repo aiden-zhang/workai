@@ -75,26 +75,26 @@ int main(int argc, char *argv[]) {
     int maxBatchSize = 32;
     int warmupTimes = 1;
     int executionTimes = 50;
-    int threadNum = 4;
-    int is_deserialize = 1;
+    int threadNum = 1;
+    int is_deserialize = 0;
     int is_serialize = 0;
-    std::string modelPath = "./humdet.rlym";
+    std::string modelPath = "./justaddfp32.rlym";
     std::vector<std::string> output_nodes;
     getCustomOpt(argc, argv, modelPath, maxBatchSize, executionTimes, threadNum, is_serialize, is_deserialize, output_nodes);
 
     std::cout << "modelPath: "<< modelPath << ", maxBatchSize: "<< maxBatchSize << ", executionTimes: " << executionTimes <<", threadNum: "<< threadNum 
     << ", is_serialize: "<< is_serialize << ", is_deserialize: "<< is_deserialize << std::endl;
 
-    cudaSetDevice(deviceId);
-    cudaDeviceProp deviceProp{};
-    CUDA_CHECK(cudaGetDeviceProperties(&deviceProp, deviceId));
+    // cudaSetDevice(deviceId);
+    // cudaDeviceProp deviceProp{};
+    // CUDA_CHECK(cudaGetDeviceProperties(&deviceProp, deviceId));
 
-    int clusterCount = deviceProp.clusterCount;
-    int tuCount = 0;
-    for(int i = 0; i < clusterCount; i++)
-    {
-        tuCount += deviceProp.tuNum[i];
-    }
+    // int clusterCount = deviceProp.clusterCount;
+    int tuCount = 3;
+    // for(int i = 0; i < clusterCount; i++)
+    // {
+    //     tuCount += deviceProp.tuNum[i];
+    // }
     std::cout << "tuCount: "<<tuCount<<std::endl;
     std::vector<float> totalMillisecondsList;
     std::vector<int> clusterFpsList;
@@ -156,10 +156,17 @@ int main(int argc, char *argv[]) {
         }
 
         std::cout << "----Parse----\n";
-        parser->Parse(modelPath.c_str(), *network);
+        auto parse_ret = parser->Parse(modelPath.c_str(), *network);
+        if( parse_ret != 1 ) {
+            std::cout << "----parse fail!! ret: "<<parse_ret<<std::endl;
+            return -1;  
+        }
 
         std::cout << "----BuildEngine----\n";        
-        engine = builder->BuildEngine(*network);
+        if( (engine = builder->BuildEngine(*network)) == nullptr ) {
+            std::cout << "----build engine fail!!\n";
+            return 0;  
+        }
     }
 
 
@@ -171,9 +178,10 @@ int main(int argc, char *argv[]) {
         slz.write(static_cast<char *>(ser_res->Data()),
                     static_cast<int64_t>(ser_res->Size()));
         slz.close();
+        return 0;
     }
 
-    auto clusterEnqueueFunc = [&](int batch_size, int clusterIdx, int thread_idx) {
+    auto clusterEnqueueFunc = [&](int batch_size, int clusterIdx, int thread_idx) -> int {
         std::cout << "clusterIdx: " << clusterIdx << " --> threadIdx: "<< thread_idx << std::endl;
         auto nbBindings = engine->GetNbBindings();
         void **binding_device_array = (void**)malloc(nbBindings * sizeof(void*));
@@ -200,7 +208,7 @@ int main(int argc, char *argv[]) {
             binding->device_buffer = pdev;
             binding->host_buffer = phost;
             
-            printf("dataTypeSize: %zu\n", dataTypeSize);
+            printf("dataTypeSize: %zu, bindingSize: %zu\n", dataTypeSize,bindingSize);
             if (is_input) {
                 for(int i = 0; i < bindingSize/dataTypeSize ; i++)
                 {
@@ -211,7 +219,7 @@ int main(int argc, char *argv[]) {
                         ((float*)phost)[i] = 1.0f;
                     } else {
                         printf("err! dataTypeSize: %zu\n", dataTypeSize);
-                        return;
+                        return -1;
                     }
                 }
                 cudaMemcpy(pdev, phost, bindingSize, cudaMemcpyHostToDevice);
@@ -225,7 +233,10 @@ int main(int argc, char *argv[]) {
 
         auto clusterConfig = static_cast<dl::nne::ClusterConfig>(clusterIdx);
         auto executionContext = engine->CreateExecutionContext(clusterConfig);
-
+        if( executionContext == nullptr ) {
+            std::cout << "create context fail!!\n";
+            return -1;  
+        }
         cudaStream_t cudaStream;
         CUDA_CHECK( cudaStreamCreateWithFlags(&cudaStream, cudaStreamNonBlocking) );
         float &totalMilliseconds = totalMillisecondsList[thread_idx];    
@@ -257,7 +268,7 @@ int main(int argc, char *argv[]) {
                             printf("%f  ", ((float*)binding_list[i]->host_buffer)[kk*10+j]);
                         } else {
                             printf("err! dataTypeSize: %d\n", binding_list[i]->dataTypeSize);
-                            return;
+                            return -1;
                         }
                     }
                 }
@@ -271,7 +282,10 @@ int main(int argc, char *argv[]) {
 
         CUDA_CHECK( cudaStreamDestroy(cudaStream) );
         executionContext->Destroy();
+
+        return 0;
     };
+
 
     std::vector<std::thread> threads;
     for (int i = 0; i < threadNum; ++i) {
@@ -288,19 +302,20 @@ int main(int argc, char *argv[]) {
     int allClusterFps = 0;
     for (int i = 0; i < threadNum; ++i) {
         clusterFpsList[i] = 1000.0f * maxBatchSize *executionTimes/totalMillisecondsList[i];
-        std::cout << "thread " << i << "; costs: " << totalMillisecondsList[i] / executionTimes << " ms; fps: "<< clusterFpsList[i] << std::endl;
+        std::cout << "\nthread " << i << "; costs: " << totalMillisecondsList[i] / executionTimes << " ms; fps: "<< clusterFpsList[i] << std::endl;
         SumMilliseconds+=totalMillisecondsList[i];
         allClusterFps += clusterFpsList[i];
     }
     
     std::cout << "avg cost: " << SumMilliseconds/ threadNum/executionTimes<< " ms, all fps: " << allClusterFps << std::endl;
     
-    engine->Destroy();
+    // engine->Destroy();
     if (is_deserialize != 1) {
         parser->Destroy();
         network->Destroy();
         builder->Destroy();
     }
     #endif
+    // exit(0);
     return 0;
 }
